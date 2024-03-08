@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+src/TimeWeaver.egg-info/PKG-INFO
+src/TimeWeaver.egg-info/SOURCES.txt
+src/TimeWeaver.egg-info/dependency_links.txt
+src/TimeWeaver.egg-info/requires.txt
+src/TimeWeaver.egg-info/top_level.txt

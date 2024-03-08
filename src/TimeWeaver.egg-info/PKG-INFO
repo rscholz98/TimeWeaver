@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: TimeWeaver
+Version: 0.1.0
+Summary: Python Package for automated multivariate Time Series imputation
+Home-page: https://github.com/rscholz98/TimeWeaver
+Author: Richard Scholz
+Author-email: richardscholz1@gmx.de
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mlflow==2.10.2
+Requires-Dist: scipy==1.12.0
+Requires-Dist: tsfresh==0.20.2
+Requires-Dist: tsfel==0.1.6
+Requires-Dist: openpyxl==3.1.2
+Requires-Dist: plotly==5.18.0
+Requires-Dist: nbformat==5.9.2
+Requires-Dist: seaborn==0.13.2
+Requires-Dist: kaleido==0.2.1
+Requires-Dist: sphinx==5.0.1
+Requires-Dist: sphinx-rtd-theme==1.0.0
+Requires-Dist: sphinx-design==0.5.0
+Requires-Dist: pyreadr==0.5.0
+
+# TimeWeaver
+Python Package for automated multivariate Time Series imputation
