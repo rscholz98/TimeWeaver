@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Master PGM's documentation!
+Welcome to Time Weavers documentation!
 ======================================
 
-In this project, we focus on leveraging machine learning for enhancing the precision and efficiency of Precision Glass Molding (PGM). The aim is to predict the Center Thickness of precision lenses using machine data, like temperature and pressure, to automate quality assessment and improve production.
+Currently under development, this documentation will be updated as the project progresses.
 
 .. toctree::
    :maxdepth: 2
