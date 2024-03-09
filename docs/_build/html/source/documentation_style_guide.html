@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation Style Guide &mdash; TimeWeaver  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TimeWeaver Class" href="timeweaver.html" />
+    <link rel="prev" title="Installation Guide" href="installing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> TimeWeaver
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-restructuredtext-rest">Why reStructuredText (reST)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#function-documentation-example">Function Documentation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guidelines-for-documentation">Guidelines for Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-to-documentation">Contributing to Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timeweaver.html">TimeWeaver Class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TimeWeaver</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Documentation Style Guide</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/rscholz98/TimeWeaver/blob/mastersource/documentation_style_guide.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation-style-guide">
+<h1>Documentation Style Guide<a class="headerlink" href="#documentation-style-guide" title="Permalink to this heading"></a></h1>
+<p>Our project’s documentation exclusively utilizes reStructuredText (reST), the native markup language of Sphinx, to ensure a consistent and richly detailed presentation of information. This decision aligns with our commitment to leveraging the full spectrum of features offered by Sphinx, enhancing both the developer and user experience through comprehensive documentation practices.</p>
+<section id="why-restructuredtext-rest">
+<h2>Why reStructuredText (reST)?<a class="headerlink" href="#why-restructuredtext-rest" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Comprehensive Markup Capabilities</strong>: reST allows for intricate documentation features, including hyperlinks, cross-references, emphasis, and structured lists, providing a versatile toolset for detailed documentation.</p></li>
+<li><p><strong>Integrated Sphinx Support</strong>: As the backbone of Sphinx documentation, reST ensures seamless integration and optimal use of Sphinx’s capabilities, such as automatic indexing, syntax highlighting, and extensible directives.</p></li>
+<li><p><strong>Uniformity Across Documentation</strong>: By standardizing on reST, we maintain a consistent style and format across all documentation, facilitating easier updates, contributions, and navigation.</p></li>
+</ul>
+</section>
+<section id="function-documentation-example">
+<h2>Function Documentation Example<a class="headerlink" href="#function-documentation-example" title="Permalink to this heading"></a></h2>
+<p>To illustrate how functions should be documented within our codebase, consider the example of a simple function, <cite>calculate_area</cite>, which calculates the area of a rectangle:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_area</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates the area of a rectangle given its length and width.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span>
+</pre></div>
+</div>
+<p>Here’s how this function should be documented in reStructuredText (reST) format:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="calculate_area">
+<span class="sig-name descname"><span class="pre">calculate_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_area" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the area of a rectangle given its length and width.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>float</em>) – The length of the rectangle, a floating-point number.</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – The width of the rectangle, a floating-point number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The calculated area of the rectangle.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p><strong>Example Usage:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">calculate_area</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The area of the rectangle is:&quot;</span><span class="p">,</span> <span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>The source code of a documentation can also be accessed by using the button “View source” in the top right corner of the documentation page.</p>
+</section>
+<section id="guidelines-for-documentation">
+<h2>Guidelines for Documentation<a class="headerlink" href="#guidelines-for-documentation" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Adherence to reST Syntax</strong>: All project documentation, from high-level overviews to in-depth technical descriptions, should strictly follow reST syntax guidelines to maintain consistency and clarity.</p></li>
+<li><p><strong>Clear and Concise Language</strong>: Documentation should be written in a clear, concise manner, making it accessible to both new users and experienced contributors. Aim for simplicity without sacrificing depth and detail.</p></li>
+<li><p><strong>Structured Documentation Approach</strong>: Organize documentation logically, employing reST’s structural elements like sections, subsections, and lists to create a coherent and navigable document.</p></li>
+</ul>
+</section>
+<section id="contributing-to-documentation">
+<h2>Contributing to Documentation<a class="headerlink" href="#contributing-to-documentation" title="Permalink to this heading"></a></h2>
+<p>We encourage contributions to our documentation. When contributing, please ensure your submissions adhere to the reST format and reflect our documentation standards. Contributions should aim to enhance clarity, improve coverage, or update existing materials to reflect the latest project developments.</p>
+<p>By exclusively using reStructuredText (reST) for our documentation, we aim to create a comprehensive, accessible, and cohesive body of documentation that effectively supports our project’s goals and community.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installing.html" class="btn btn-neutral float-left" title="Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="timeweaver.html" class="btn btn-neutral float-right" title="TimeWeaver Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Richard Scholz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

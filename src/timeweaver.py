@@ -10,7 +10,47 @@ import warnings
 
 
 class TimeWeaver:
+    """
+    Facilitates data preprocessing, analysis, and evaluation of interpolation methods on pandas DataFrames, particularly for time-series data. 
+    It summarizes data characteristics, preprocesses data, and evaluates various interpolation methods under different conditions.
+
+    :param df: The DataFrame to analyze and process.
+    :type df: pd.DataFrame
+    :param tracking_column: The column name used for tracking, often representing time.
+    :type tracking_column: str
+    
+    **Attributes**:
+    - `df` (pd.DataFrame): The initial DataFrame.
+    - `tracking_column` (str): The tracking column name.
+    - `evaluation_dataframe` (pd.DataFrame or None): Stores interpolation method evaluation results.
+    - `method_success_dataframe` (pd.DataFrame or None): Records success or failure of each interpolation method for each column.
+
+    **Example Usage**:
+
+    .. code-block:: python
+
+        import pandas as pd
+        # Example DataFrame
+        data = {
+            'date': pd.date_range(start='1/1/2020', periods=5),
+            'value': [1, 2, np.nan, 4, 5]
+        }
+        df = pd.DataFrame(data)
+        tw = TimeWeaver(df, 'date')
+        tw.evaluate()
+
+    .. note:: 
+        This class is designed to work with pandas DataFrames and requires the pandas library.
+    """
     def __init__(self, df: pd.DataFrame, tracking_column: str):
+        """
+        Initializes the TimeWeaver class with a DataFrame and a tracking column name.
+
+        :param df: The DataFrame containing the data to be analyzed and processed.
+        :type df: pd.DataFrame
+        :param tracking_column: The column name used for tracking, often time.
+        :type tracking_column: str
+        """
 
         if not isinstance(df, pd.DataFrame):
             raise ValueError("Error: df must be a pandas DataFrame")
@@ -32,6 +72,14 @@ class TimeWeaver:
         self.method_success_dataframe = None
 
     def log(self, message, overwrite=True):
+        """
+        Prints a formatted log message to the console. Can overwrite the current line or print on a new line.
+
+        :param message: The message to be logged.
+        :type message: str
+        :param overwrite: If True, the message overwrites the current line in the console. If False, the message is printed on a new line.
+        :type overwrite: bool
+        """
 
         start_symbol = "➤"
         end_symbol = "✔"
@@ -47,6 +95,21 @@ class TimeWeaver:
             print("\n" + pretty_message)
 
     def get_summary_characters(self, set_regex_pattern=None):
+        """
+        Generates a summary DataFrame containing various statistics for each column in the original DataFrame.
+
+        :param full_summary: If True, includes additional statistics such as unique values count, most frequent value, and more.
+        :type full_summary: bool
+        :return: A DataFrame containing summary statistics for each column.
+        :rtype: pd.DataFrame
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            summary_df = tw.get_summary(full_summary=True)
+            print(summary_df)
+        """
         
         if self.evaluation_dataframe is not None:
             self.log("Use the get_summary() method before the evaluation", overwrite=False)
@@ -92,6 +155,24 @@ class TimeWeaver:
         return summary_df
     
     def get_summary(self, full_summary: bool = False):
+        """
+        Creates a summary of various statistics for each column in the DataFrame, including counts of numeric and non-numeric cells, NaNs, and zeros. Optionally includes detailed statistics like unique values count, most frequent value, minimum, maximum, mean, and median.
+
+        :param full_summary: Includes detailed statistics if True. Default is False.
+        :type full_summary: bool
+        :return: A DataFrame summarizing the statistics for each column.
+        :rtype: pd.DataFrame
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            summary_df = tw.get_summary(full_summary=True)
+            print(summary_df)
+
+        **Note**:
+        The function calculates basic counts by default. Set `full_summary=True` for an extended set of statistics, applicable primarily to numeric columns.
+        """
         # Initialize a dictionary to hold summary data
         summary = {
             'Column': [],
@@ -166,11 +247,36 @@ class TimeWeaver:
     
     def preprocess(self):
         """
-        Preprocesses the DataFrame by dropping specified columns, converting data to numeric,
-        replacing specified characters with NaN, and checking continuity and reindexing.
+        Placeholder method for preprocessing the DataFrame. This method should be implemented to 
+        include specific preprocessing steps as needed.
         """
 
     def fill_edge_nans(self, df: pd.DataFrame):
+        """
+        Applies forward and backward filling to address NaN values at the start and end of each DataFrame column.
+
+        This method modifies the input DataFrame in place by filling NaN values at the edges of each column. 
+        It uses forward fill (ffill) to fill NaNs at the beginning of a column and backward fill (bfill) to fill NaNs at the end.
+
+        :param df: The DataFrame containing potential edge NaN values to be filled.
+        :type df: pd.DataFrame
+        :return: The modified DataFrame with edge NaN values filled.
+        :rtype: pd.DataFrame
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            df = pd.DataFrame({
+                'A': [np.nan, 2, 3, np.nan],
+                'B': [1, np.nan, 3, 4]
+            })
+            filled_df = tw.fill_edge_nans(df)
+            print(filled_df)
+
+        **Note**:
+        The method modifies the DataFrame in place but also returns the DataFrame for chaining operations or assignment.
+        """
         
         for column_name in df.columns:
             # Forward fill (ffill) to handle NaNs at the start
@@ -184,6 +290,24 @@ class TimeWeaver:
     def evaluate(
             self, missing_rate=0.1, random: bool = True, prints: bool = True, logging: bool = False
         ):
+            """
+            Evaluates various interpolation methods on the DataFrame, under specified conditions.
+
+            :param missing_rate: Proportion of values to be randomly removed from each column for interpolation testing.
+            :type missing_rate: float
+            :param random: Determines if missing values are randomly selected or evenly spaced.
+            :type random: bool
+            :param prints: Controls printout of log messages during the evaluation process.
+            :type prints: bool
+            :param logging: Enables logging of warning messages for interpolation methods that result in errors or NaNs.
+            :type logging: bool
+
+            **Example Usage**:
+
+            .. code-block:: python
+
+                tw.evaluate(missing_rate=0.2, random=True, prints=True, logging=True)
+            """
             
             if logging is False:
                 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -306,8 +430,20 @@ class TimeWeaver:
 
     def highlight_lowest(self, s):
         """
-        Highlights the lowest non-negative values in the DataFrame.
+        Highlights the lowest non-negative value in a Series for visualization.
+
+        :param s: Series of values to be highlighted.
+        :type s: pd.Series
+        :return: List of styles to be applied for highlighting.
+        :rtype: list
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            styled_df = df.style.apply(tw.highlight_lowest, axis=1)
         """
+
         # Filter out negative values and find the minimum of the remaining values
         non_negative_values = s[s >= 0]
         if not non_negative_values.empty:  # Check if there are any non-negative values
@@ -319,12 +455,38 @@ class TimeWeaver:
         return ["background-color: green" if v == min_value else "" for v in s]
     
     def highlight_false(self, s):
+
+        """
+        Highlights False values in a Series, used primarily for visualizing method success or failure.
+
+        :param s: Series of boolean values indicating success (True) or failure (False).
+        :type s: pd.Series
+        :return: List of styles to be applied for highlighting False values.
+        :rtype: list
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            styled_df = method_success_df.style.apply(tw.highlight_false, axis=1)
+        """
    
         return ['background-color: #FF4500' if v is False else '' for v in s]
 
     def get_evaluation_dataframe(self, style: bool = True):
         """
-        Applies styling to the results DataFrame to highlight the lowest non-negative values in each row.
+        Retrieves the evaluation DataFrame with optional styling to highlight the lowest values.
+
+        :param style: Applies styling if set to True.
+        :type style: bool
+        :return: Evaluation DataFrame, optionally styled.
+        :rtype: pd.DataFrame or Styler
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            eval_df = tw.get_evaluation_dataframe(style=True)
         """
         if self.evaluation_dataframe is not None:
             if style:
@@ -341,6 +503,20 @@ class TimeWeaver:
             )
     
     def get_method_success_dataframe(self, style: bool = True):
+        """
+        Retrieves the method success DataFrame with optional styling to highlight False values.
+
+        :param style: Applies styling if set to True.
+        :type style: bool
+        :return: Method success DataFrame, optionally styled.
+        :rtype: pd.DataFrame or Styler
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            success_df = tw.get_method_success_dataframe(style=True)
+        """
         if self.method_success_dataframe is not None:
             if style:
                 return self.method_success_dataframe.style.apply(
@@ -355,6 +531,22 @@ class TimeWeaver:
             )
         
     def get_best(self, optimized_selection: bool = True):
+        """
+        Identifies the best interpolation method(s) for each column based on the evaluation results.
+
+        :param optimized_selection: Selects methods based on performance and frequency of being best if True. 
+                                    Otherwise, selects the method(s) with the lowest error.
+        :type optimized_selection: bool
+        :return: Mapping each column to the best interpolation method(s) or a list of (column, method) tuples.
+        :rtype: dict or list
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            best_methods = tw.get_best(optimized_selection=True)
+            print(best_methods)
+        """
         if self.evaluation_dataframe is not None:
 
             if optimized_selection is False:
@@ -402,6 +594,24 @@ class TimeWeaver:
             return None
         
     def get_rate_analysis(self, start_rate: float = 0.1, end_rate: float = 0.5, step: float = 0.01, prints: bool = False):
+        """
+        Analyzes interpolation method performance across a range of missing data rates.
+
+        :param start_rate: The starting missing rate for evaluation.
+        :type start_rate: float
+        :param end_rate: The ending missing rate for evaluation.
+        :type end_rate: float
+        :param step: The step size between evaluated missing rates.
+        :type step: float
+        :param prints: If True, prints log messages during the analysis.
+        :type prints: bool
+
+        **Example Usage**:
+
+        .. code-block:: python
+
+            tw.get_rate_analysis(start_rate=0.1, end_rate=0.5, step=0.05, prints=True)
+        """
         missing_rates = np.arange(start_rate, end_rate, step)
         all_results = []
 

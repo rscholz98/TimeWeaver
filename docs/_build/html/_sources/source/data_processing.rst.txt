@@ -1,0 +1,14 @@
+Data Processing
+===============
+
+This section documents functions related to data processing.
+
+Check Continuity and re-Index
+-----------------------------
+
+.. autofunction:: check_Continuity_and_reIndex.check_Continuity_and_reIndex
+
+Characters to NaN
+-----------------------------
+
+.. autofunction:: characters_to_NaN.characters_to_NaN

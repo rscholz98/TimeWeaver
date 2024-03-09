@@ -1,0 +1,14 @@
+Data Exploration
+================
+
+This section documents functions related to data exploration.
+
+Summarize Special Characters
+-----------------------------
+
+.. autofunction:: summarize_special_characters.summarize_special_characters
+
+Create Line Chart Subplots
+-----------------------------
+
+.. autofunction:: create_line_chart_subplots.create_line_chart_subplots

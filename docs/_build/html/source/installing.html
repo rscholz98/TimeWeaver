@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation Guide &mdash; TimeWeaver  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation Style Guide" href="documentation_style_guide.html" />
+    <link rel="prev" title="Welcome to Master PGM’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> TimeWeaver
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-with-setup-py">Installation with setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-venv-and-install-requirements-txt">Creating venv and Install requirements.txt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-html-documentation-with-make-html">Create HTML Documentation with <cite>make html</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_style_guide.html">Documentation Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeweaver.html">TimeWeaver Class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TimeWeaver</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Installation Guide</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/rscholz98/TimeWeaver/blob/mastersource/installing.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-guide">
+<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this heading"></a></h1>
+<p>This installation guide provides step-by-step instructions for setting up the project environment, installing dependencies, and generating the HTML documentation. Follow these sections to get started.</p>
+<section id="installation-with-setup-py">
+<h2>Installation with setup.py<a class="headerlink" href="#installation-with-setup-py" title="Permalink to this heading"></a></h2>
+<p>To install this project on your system, you will need Python installed. It’s recommended to use a virtual environment for Python projects to manage dependencies effectively.</p>
+<ol class="arabic">
+<li><p><strong>Clone the Project</strong></p>
+<p>First, clone the project repository from GitHub (or your preferred source) to your local machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/yourusername/yourprojectname.git
+<span class="nb">cd</span><span class="w"> </span>yourprojectname
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create a Virtual Environment</strong></p>
+<p>Before installing the project, create a new virtual environment in the project directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</pre></div>
+</div>
+<p>Activate the virtual environment:</p>
+<p><strong>On Windows:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="se">\\</span>venv<span class="se">\\</span>Scripts<span class="se">\\</span>activate
+</pre></div>
+</div>
+<p><strong>On Unix or MacOS:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install with setup.py</strong></p>
+<p>Install the project and its Python dependencies using the <cite>setup.py</cite> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>setup.py<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="creating-venv-and-install-requirements-txt">
+<h2>Creating venv and Install requirements.txt<a class="headerlink" href="#creating-venv-and-install-requirements-txt" title="Permalink to this heading"></a></h2>
+<p>If the project has additional dependencies listed in a <cite>requirements.txt</cite> file, you can install these after activating your virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>This command installs all the Python packages listed in <cite>requirements.txt</cite>, ensuring that your environment has all the required dependencies.</p>
+</section>
+<section id="create-html-documentation-with-make-html">
+<h2>Create HTML Documentation with <cite>make html</cite><a class="headerlink" href="#create-html-documentation-with-make-html" title="Permalink to this heading"></a></h2>
+<p>Once the project is installed and all dependencies are in place, you can generate the HTML documentation using Sphinx:</p>
+<ol class="arabic">
+<li><p><strong>Navigate to the Docs Directory</strong></p>
+<p>Change directory to the <cite>docs</cite> folder where the Sphinx configuration file (<cite>conf.py</cite>) is located:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>docs
+</pre></div>
+</div>
+</li>
+<li><p><strong>Build the Documentation</strong></p>
+<p>Use the <cite>make</cite> command to build the HTML documentation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>This command instructs Sphinx to generate the documentation and place the output files in the <cite>_build/html</cite> directory within the <cite>docs</cite> folder.</p>
+</li>
+<li><p><strong>View the Documentation</strong></p>
+<p>After successfully building the documentation, open the <cite>index.html</cite> file in the <cite>_build/html</cite> directory with your web browser to view the HTML documentation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># On Windows, you might use:</span>
+start<span class="w"> </span>_build/html/index.html
+
+<span class="c1"># On Unix or MacOS, you might use:</span>
+open<span class="w"> </span>_build/html/index.html
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Congratulations! You have successfully set up and built the HTML documentation for the project.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Master PGM’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="documentation_style_guide.html" class="btn btn-neutral float-right" title="Documentation Style Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Richard Scholz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

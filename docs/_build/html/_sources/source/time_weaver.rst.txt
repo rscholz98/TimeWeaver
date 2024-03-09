@@ -1,0 +1,73 @@
+TimeWeaver Class
+================
+
+The ``TimeWeaver`` class facilitates data preprocessing, analysis, and evaluation of interpolation methods on pandas DataFrames, especially for time-series data.
+
+.. automodule:: timeweaver.py  
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Class Documentation
+-------------------
+
+.. autoclass:: TimeWeaver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+   .. method:: __init__(self, df: pd.DataFrame, tracking_column: str)
+      
+      Initializes the TimeWeaver class with a DataFrame and a tracking column name.
+
+   .. method:: log(self, message, overwrite=True)
+      
+      Prints a formatted log message to the console.
+
+   .. method:: get_summary_characters(self, set_regex_pattern=None)
+      
+      Generates a summary DataFrame of character occurrences within each column.
+
+   .. method:: get_summary(self, full_summary: bool = False)
+      
+      Generates a summary DataFrame containing various statistics for each column.
+
+   .. method:: preprocess(self)
+      
+      Placeholder method for preprocessing the DataFrame.
+
+   .. method:: fill_edge_nans(self, df: pd.DataFrame)
+      
+      Fills NaN values at the edges of each column in the DataFrame.
+
+   .. method:: evaluate(self, missing_rate=0.1, random: bool = True, prints: bool = True, logging: bool = False)
+      
+      Evaluates the performance of various interpolation methods on the DataFrame.
+
+   .. method:: highlight_lowest(self, s)
+      
+      Highlights the lowest non-negative value in a Series.
+
+Usage Example
+-------------
+
+.. code-block:: python
+
+   import pandas as pd
+   from your_module_name import TimeWeaver  # Replace with your actual module name
+
+   # Sample DataFrame
+   data = {'time': pd.date_range(start='2021-01-01', periods=5, freq='D'),
+           'value': [1, 2, np.nan, 4, 5]}
+   df = pd.DataFrame(data)
+
+   # Initialize TimeWeaver
+   tw = TimeWeaver(df, 'time')
+
+   # Get summary characters
+   print(tw.get_summary_characters())
+
+   # Evaluate interpolation methods
+   tw.evaluate()
+
+

@@ -1,0 +1,14 @@
+Data Loading
+===============
+
+This section documents functions related to data loading.
+
+Load Process Report
+-------------------
+
+.. autofunction:: data_loading.load_process_report
+
+Load Experiment Design
+-----------------------
+
+.. autofunction:: data_loading.load_experiment_design

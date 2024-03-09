@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeWeaver Class &mdash; TimeWeaver  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Documentation Style Guide" href="documentation_style_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> TimeWeaver
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_style_guide.html">Documentation Style Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TimeWeaver Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-timeweaver">Class Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-example">Usage Example</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TimeWeaver</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>TimeWeaver Class</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/rscholz98/TimeWeaver/blob/mastersource/timeweaver.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="timeweaver-class">
+<h1>TimeWeaver Class<a class="headerlink" href="#timeweaver-class" title="Permalink to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">TimeWeaver</span></code> class facilitates data preprocessing, analysis, and evaluation of interpolation methods on pandas DataFrames, especially for time-series data.</p>
+<section id="module-timeweaver">
+<span id="class-documentation"></span><h2>Class Documentation<a class="headerlink" href="#module-timeweaver" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">timeweaver.</span></span><span class="sig-name descname"><span class="pre">TimeWeaver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracking_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Facilitates data preprocessing, analysis, and evaluation of interpolation methods on pandas DataFrames, particularly for time-series data. 
+It summarizes data characteristics, preprocesses data, and evaluates various interpolation methods under different conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The DataFrame to analyze and process.</p></li>
+<li><p><strong>tracking_column</strong> (<em>str</em>) – The column name used for tracking, often representing time.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Attributes</strong>:
+- <cite>df</cite> (pd.DataFrame): The initial DataFrame.
+- <cite>tracking_column</cite> (str): The tracking column name.
+- <cite>evaluation_dataframe</cite> (pd.DataFrame or None): Stores interpolation method evaluation results.
+- <cite>method_success_dataframe</cite> (pd.DataFrame or None): Records success or failure of each interpolation method for each column.</p>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># Example DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;1/1/2020&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">tw</span> <span class="o">=</span> <span class="n">TimeWeaver</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">tw</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class is designed to work with pandas DataFrames and requires the pandas library.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">missing_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.evaluate" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates various interpolation methods on the DataFrame, under specified conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>missing_rate</strong> (<em>float</em>) – Proportion of values to be randomly removed from each column for interpolation testing.</p></li>
+<li><p><strong>random</strong> (<em>bool</em>) – Determines if missing values are randomly selected or evenly spaced.</p></li>
+<li><p><strong>prints</strong> (<em>bool</em>) – Controls printout of log messages during the evaluation process.</p></li>
+<li><p><strong>logging</strong> (<em>bool</em>) – Enables logging of warning messages for interpolation methods that result in errors or NaNs.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tw</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">missing_rate</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">logging</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.fill_edge_nans">
+<span class="sig-name descname"><span class="pre">fill_edge_nans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.fill_edge_nans" title="Permalink to this definition"></a></dt>
+<dd><p>Applies forward and backward filling to address NaN values at the start and end of each DataFrame column.</p>
+<p>This method modifies the input DataFrame in place by filling NaN values at the edges of each column. 
+It uses forward fill (ffill) to fill NaNs at the beginning of a column and backward fill (bfill) to fill NaNs at the end.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The DataFrame containing potential edge NaN values to be filled.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The modified DataFrame with edge NaN values filled.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">filled_df</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">fill_edge_nans</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filled_df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>:
+The method modifies the DataFrame in place but also returns the DataFrame for chaining operations or assignment.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.get_best">
+<span class="sig-name descname"><span class="pre">get_best</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimized_selection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.get_best" title="Permalink to this definition"></a></dt>
+<dd><p>Identifies the best interpolation method(s) for each column based on the evaluation results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>optimized_selection</strong> (<em>bool</em>) – Selects methods based on performance and frequency of being best if True. 
+Otherwise, selects the method(s) with the lowest error.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mapping each column to the best interpolation method(s) or a list of (column, method) tuples.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or list</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">best_methods</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">get_best</span><span class="p">(</span><span class="n">optimized_selection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best_methods</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.get_evaluation_dataframe">
+<span class="sig-name descname"><span class="pre">get_evaluation_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.get_evaluation_dataframe" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the evaluation DataFrame with optional styling to highlight the lowest values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>style</strong> (<em>bool</em>) – Applies styling if set to True.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Evaluation DataFrame, optionally styled.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame or Styler</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eval_df</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">get_evaluation_dataframe</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.get_method_success_dataframe">
+<span class="sig-name descname"><span class="pre">get_method_success_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.get_method_success_dataframe" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the method success DataFrame with optional styling to highlight False values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>style</strong> (<em>bool</em>) – Applies styling if set to True.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Method success DataFrame, optionally styled.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame or Styler</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">success_df</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">get_method_success_dataframe</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.get_rate_analysis">
+<span class="sig-name descname"><span class="pre">get_rate_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.get_rate_analysis" title="Permalink to this definition"></a></dt>
+<dd><p>Analyzes interpolation method performance across a range of missing data rates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_rate</strong> (<em>float</em>) – The starting missing rate for evaluation.</p></li>
+<li><p><strong>end_rate</strong> (<em>float</em>) – The ending missing rate for evaluation.</p></li>
+<li><p><strong>step</strong> (<em>float</em>) – The step size between evaluated missing rates.</p></li>
+<li><p><strong>prints</strong> (<em>bool</em>) – If True, prints log messages during the analysis.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tw</span><span class="o">.</span><span class="n">get_rate_analysis</span><span class="p">(</span><span class="n">start_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">end_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.get_summary">
+<span class="sig-name descname"><span class="pre">get_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.get_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a summary of various statistics for each column in the DataFrame, including counts of numeric and non-numeric cells, NaNs, and zeros. Optionally includes detailed statistics like unique values count, most frequent value, minimum, maximum, mean, and median.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>full_summary</strong> (<em>bool</em>) – Includes detailed statistics if True. Default is False.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A DataFrame summarizing the statistics for each column.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">summary_df</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">get_summary</span><span class="p">(</span><span class="n">full_summary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary_df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>:
+The function calculates basic counts by default. Set <cite>full_summary=True</cite> for an extended set of statistics, applicable primarily to numeric columns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.get_summary_characters">
+<span class="sig-name descname"><span class="pre">get_summary_characters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_regex_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.get_summary_characters" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a summary DataFrame containing various statistics for each column in the original DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>full_summary</strong> (<em>bool</em>) – If True, includes additional statistics such as unique values count, most frequent value, and more.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A DataFrame containing summary statistics for each column.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">summary_df</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">get_summary</span><span class="p">(</span><span class="n">full_summary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.highlight_false">
+<span class="sig-name descname"><span class="pre">highlight_false</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.highlight_false" title="Permalink to this definition"></a></dt>
+<dd><p>Highlights False values in a Series, used primarily for visualizing method success or failure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>pd.Series</em>) – Series of boolean values indicating success (True) or failure (False).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of styles to be applied for highlighting False values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">styled_df</span> <span class="o">=</span> <span class="n">method_success_df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tw</span><span class="o">.</span><span class="n">highlight_false</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.highlight_lowest">
+<span class="sig-name descname"><span class="pre">highlight_lowest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.highlight_lowest" title="Permalink to this definition"></a></dt>
+<dd><p>Highlights the lowest non-negative value in a Series for visualization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>pd.Series</em>) – Series of values to be highlighted.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of styles to be applied for highlighting.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">styled_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tw</span><span class="o">.</span><span class="n">highlight_lowest</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.log" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a formatted log message to the console. Can overwrite the current line or print on a new line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>str</em>) – The message to be logged.</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – If True, the message overwrites the current line in the console. If False, the message is printed on a new line.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="timeweaver.TimeWeaver.preprocess">
+<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#timeweaver.TimeWeaver.preprocess" title="Permalink to this definition"></a></dt>
+<dd><p>Placeholder method for preprocessing the DataFrame. This method should be implemented to 
+include specific preprocessing steps as needed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="usage-example">
+<h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">your_module_name</span> <span class="kn">import</span> <span class="n">TimeWeaver</span>  <span class="c1"># Replace with your actual module name</span>
+
+<span class="c1"># Sample DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Initialize TimeWeaver</span>
+<span class="n">tw</span> <span class="o">=</span> <span class="n">TimeWeaver</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get summary characters</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tw</span><span class="o">.</span><span class="n">get_summary_characters</span><span class="p">())</span>
+
+<span class="c1"># Evaluate interpolation methods</span>
+<span class="n">tw</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="documentation_style_guide.html" class="btn btn-neutral float-left" title="Documentation Style Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Richard Scholz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
