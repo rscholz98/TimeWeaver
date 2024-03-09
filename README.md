@@ -41,6 +41,14 @@ print(interpolator.get_best(optimized_selection=True))
  ('Is', 'from_derivatives'),
  ('Ir', 'akima')]
 
+# Structure
+
+<img src="./assets/structure.png" alt="TimeWeaver Logo" width="500" />
+
+# Baseline Procedure
+
+<img src="./assets/procedure.png" alt="TimeWeaver Logo" width="500" />
+
 # Functionalities
 
 ```python
