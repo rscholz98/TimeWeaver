@@ -50,10 +50,7 @@ from timeweaver import TimeWeaver
 dataframe = pd.read_csv("../data/PRSA/PRSA_data_2010.1.1-2014.12.31.csv")
 dataframe
 ```
-<table>
-<tr>
-<td>
-  
+
 |   No |   year |   month |   day |   hour |   pm2.5 |   DEWP |   TEMP |   PRES | cbwd   |   Iws |   Is |   Ir |
 |-----:|-------:|--------:|------:|-------:|--------:|-------:|-------:|-------:|:-------|------:|-----:|-----:|
 |    1 |   2010 |       1 |     1 |      0 |     nan |    -21 |    -11 |   1021 | NW     |  1.79 |    0 |    0 |
@@ -62,12 +59,9 @@ dataframe
 |    4 |   2010 |       1 |     1 |      3 |     nan |    -21 |    -14 |   1019 | NW     |  9.84 |    0 |    0 |
 |    5 |   2010 |       1 |     1 |      4 |     nan |    -20 |    -12 |   1018 | NW     | 12.97 |    0 |    0 |
 
-</td>
-<td>
-<img src="./assets/pm25.png" alt="TimeWeaver Logo" width="300" />
-</td>
-</tr>
-</table>
+
+<img src="./assets/pm25.png" alt="TimeWeaver Logo" width="500" />
+
 
 Initialize the TimeWeaver object and provide the dataframe and the tracking colum (Time or Index)
 ```python
