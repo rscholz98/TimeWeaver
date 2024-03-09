@@ -187,6 +187,7 @@ class TimeWeaver:
             
             if logging is False:
                 warnings.filterwarnings("ignore", category=FutureWarning)
+                warnings.filterwarnings("ignore", category=UserWarning)
 
             methods = [
             # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html
