@@ -46,10 +46,6 @@ print(interpolator.get_best(optimized_selection=True))
 
 <img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/structure.png" alt="TimeWeaver Structure" width="100%" />
 
-# Baseline Procedure
-
-<img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/procedure.png" alt="TimeWeaver Procedure" width="100%" />
-
 # Functionalities
 
 ```python
