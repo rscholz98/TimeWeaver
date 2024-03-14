@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='TimeWeaver',  # Package name
-    version='0.1.1',  # Package version
+    version='0.1.3',  # Package version
     author='Richard Scholz',  # Your name
     author_email='richardscholz1@gmx.de',  # Your email address
     description='Python Package for automated multivariate Time Series imputation',  # Short package description
