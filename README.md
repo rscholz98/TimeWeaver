@@ -64,8 +64,8 @@ dataframe
 |   4 | 2010 |     1 |   1 |    3 |   nan |  -21 |  -14 | 1019 | NW   |  9.84 |   0 |   0 |
 |   5 | 2010 |     1 |   1 |    4 |   nan |  -20 |  -12 | 1018 | NW   | 12.97 |   0 |   0 |
 
-<img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/pm25.png" alt="TimeWeaver PM25" width="100%" />
-* Filtered for the relevant columns "pm2.5", "DEWP", "TEMP", "PRES" and "Iws"
+![TimeWeaver PM25](https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/pm25.png)
+**Filtered for the relevant columns "pm2.5", "DEWP", "TEMP", "PRES" and "Iws"*
 
 Initialize the TimeWeaver object and provide the dataframe and the tracking colum (Time or Index)
 
