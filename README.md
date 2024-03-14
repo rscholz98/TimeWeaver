@@ -6,7 +6,7 @@
 ![contributors](https://img.shields.io/github/contributors/rscholz98/TimeWeaver)
 ![codesize](https://img.shields.io/github/languages/code-size/rscholz98/TimeWeaver)
 
-# TimeWeaver: Automated time series imputation <img src="./src/assets/logo.png" align="right" alt="TimeWeaver Logo" />
+# TimeWeaver: Automated time series imputation <img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/logo.png" align="right" alt="TimeWeaver Logo" />
 
 TimeWeaver is a Python library designed for multivariate time series data analysis, specifically addressing the challenges of machine process environmental data. It focuses on overcoming incomplete datasets due to sensor errors by employing various tailored imputation techniques. This ensures the integrity and relevance of data, catering to the unique characteristics of different features, such as discrepancies between power consumption and temperature curves.
 
@@ -44,11 +44,11 @@ print(interpolator.get_best(optimized_selection=True))
 
 # Structure
 
-<img src="./src/assets/structure.png" alt="TimeWeaver Structure" width="500" />
+<img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/structure.png" alt="TimeWeaver Structure" width="500" />
 
 # Baseline Procedure
 
-<img src="./src/assets/procedure.png" alt="TimeWeaver Procedure" width="500" />
+<img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/procedure.png" alt="TimeWeaver Procedure" width="500" />
 
 # Functionalities
 
@@ -68,7 +68,7 @@ dataframe
 |   4 | 2010 |     1 |   1 |    3 |   nan |  -21 |  -14 | 1019 | NW   |  9.84 |   0 |   0 |
 |   5 | 2010 |     1 |   1 |    4 |   nan |  -20 |  -12 | 1018 | NW   | 12.97 |   0 |   0 |
 
-<img src="./src/assets/pm25.png" alt="TimeWeaver PM25" width="500" />
+<img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/pm25.png" alt="TimeWeaver PM25" width="500" />
 
 Initialize the TimeWeaver object and provide the dataframe and the tracking colum (Time or Index)
 
@@ -297,4 +297,4 @@ results_df
 interpolator.get_rate_analysis()
 ```
 
-<img src="./src/assets/pm25_DEWP.png" alt="pm25_DEWP_analysis" />
+<img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/pm25_DEWP.png" alt="pm25_DEWP_analysis" />
