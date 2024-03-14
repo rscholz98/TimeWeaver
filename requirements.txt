@@ -22,3 +22,6 @@ pyreadr==0.5.0
 
 # Markdown
 tabulate==0.9.0
+
+# Publishing
+twine==5.0.0
