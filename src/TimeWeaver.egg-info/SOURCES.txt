@@ -6,3 +6,5 @@ src/TimeWeaver.egg-info/SOURCES.txt
 src/TimeWeaver.egg-info/dependency_links.txt
 src/TimeWeaver.egg-info/requires.txt
 src/TimeWeaver.egg-info/top_level.txt
+src/timeweaver/__init__.py
+src/timeweaver/timeweaver.py
