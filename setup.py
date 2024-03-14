@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='TimeWeaver',  # Package name
-    version='0.1.7.5',  # Package version
+    version='0.1.7.13',  # Package version
     author='Richard Scholz',  # Your name
     author_email='richardscholz1@gmx.de',  # Your email address
     description='Python Package for automated multivariate Time Series imputation',  # Short package description
@@ -11,6 +11,10 @@ setup(
     url='https://github.com/rscholz98/TimeWeaver',  # Package URL
     package_dir={'': 'src'},  # Specify the source directory
     packages=find_packages(where='src'),  # Automatically find packages in src
+    package_data={
+        'timeweaver': ['datasets/PRSA_data_2010.1.1-2014.12.31.csv'],  # Example usage
+        'TimeWeaver': ['datasets/PRSA_data_2010.1.1-2014.12.31.csv'],  # Example usage
+    },
     install_requires=[
         'scipy==1.12.0',
         'pandas==2.2.0',
@@ -36,4 +40,6 @@ setup(
 )
 
 # Setup local package 
-# Start with $ pip install -e . 
+# Start with $ pip install -e .
+# python setup.py sdist
+# twine upload dist/TimeWeaver-0.1.7.4.tar.gz
