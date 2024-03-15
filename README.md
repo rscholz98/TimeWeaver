@@ -21,10 +21,10 @@ The currently implementation methods are based on the provided functions by nump
 The following example uses the Beijing PM25 Data Set to show the functionalities of the library.
 
 ```python
-import pandas as pd
-from timeweaver import TimeWeaver
+from timeweaver.timeweaver import TimeWeaver
+from timeweaver.datasets import DataSets
 
-dataframe = pd.read_csv("./src/data/PRSA/PRSA_data_2010.1.1-2014.12.31.csv")
+dataframe = DataSets.PRSA()
 interpolator = TimeWeaver(dataframe[0:1000], tracking_column="No")
 interpolator.evaluate()
 print(interpolator.get_best(optimized_selection=True))
