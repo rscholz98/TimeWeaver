@@ -1,2 +1,3 @@
-from timeweaver.timeweaver import TimeWeaver
-from timeweaver.datasets import DataSets
+from timeweaver import timeweaver
+from timeweaver import data
+from timeweaver import datasets

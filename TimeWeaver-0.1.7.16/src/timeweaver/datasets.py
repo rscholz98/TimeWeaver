@@ -9,7 +9,7 @@ class DataSets:
         """
         
         try:
-            with resources.path('timeweaver.data', 'PRSA_data_2010.1.1-2014.12.31.csv') as filepath:
+            with resources.path('timeweaver', 'PRSA_data_2010.1.1-2014.12.31.csv') as filepath:
                 data = pd.read_csv(filepath)
             return data
         except FileNotFoundError:

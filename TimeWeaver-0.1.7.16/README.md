@@ -1,31 +1,3 @@
-Metadata-Version: 2.1
-Name: TimeWeaver
-Version: 0.1.7.23
-Summary: Python Package for automated multivariate Time Series imputation
-Home-page: https://github.com/rscholz98/TimeWeaver
-Author: Richard Scholz
-Author-email: richardscholz1@gmx.de
-Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
-Requires-Python: >=3.8
-Description-Content-Type: text/markdown
-License-File: LICENSE
-Requires-Dist: scipy==1.12.0
-Requires-Dist: pandas==2.2.0
-Requires-Dist: tsfresh==0.20.2
-Requires-Dist: tsfel==0.1.6
-Requires-Dist: plotly==5.18.0
-Requires-Dist: nbformat==5.9.2
-Requires-Dist: seaborn==0.13.2
-Requires-Dist: kaleido==0.2.1
-Requires-Dist: sphinx==5.0.1
-Requires-Dist: sphinx-rtd-theme==1.0.0
-Requires-Dist: sphinx-design==0.5.0
-Requires-Dist: pyreadr==0.5.0
-Requires-Dist: tabulate==0.9.0
-Requires-Dist: twine==5.0.0
-
 [![Project Status: Active The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/rscholz98/TimeWeaver)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rscholz98/TimeWeaver)
@@ -173,8 +145,8 @@ interpolator.get_summary(full_summary=True)
 interpolator.evaluate()
 ```
 
-âž¤ Evaluation complete. âœ”  
-âž¤ Evaluated number of methods: 21 âœ”
+➤ Evaluation complete. ✔  
+➤ Evaluated number of methods: 21 ✔
 
 If the evaluation is done the user can access differrent methods to retrieve the analysis resuslts and gain more insights into the imputation results.
 

@@ -7,8 +7,7 @@ src/TimeWeaver.egg-info/SOURCES.txt
 src/TimeWeaver.egg-info/dependency_links.txt
 src/TimeWeaver.egg-info/requires.txt
 src/TimeWeaver.egg-info/top_level.txt
+src/datasets/PRSA_data_2010.1.1-2014.12.31.csv
 src/timeweaver/__init__.py
 src/timeweaver/datasets.py
 src/timeweaver/timeweaver.py
-src/timeweaver/data/PRSA_data_2010.1.1-2014.12.31.csv
-src/timeweaver/data/__init__.py
