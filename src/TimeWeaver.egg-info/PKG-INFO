@@ -77,10 +77,9 @@ print(interpolator.get_best(optimized_selection=True))
 # Functionalities
 
 ```python
-import pandas as pd
-from timeweaver import TimeWeaver
+from timeweaver.datasets import DataSets
 
-dataframe = pd.read_csv("./src/data/PRSA/PRSA_data_2010.1.1-2014.12.31.csv")
+dataframe = DataSets.PRSA()
 dataframe
 ```
 
