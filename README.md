@@ -42,6 +42,11 @@ print(interpolator.get_best(optimized_selection=True))
 ('Is', 'from_derivatives'),
 ('Ir', 'akima')]
 
+```python
+PreProcessor = interpolator.build_PreProcessor()
+PreProcessor.transform(dataframe)
+```
+
 # Structure
 
 <img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/structure.png" alt="TimeWeaver Structure" width="100%" />
