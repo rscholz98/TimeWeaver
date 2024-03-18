@@ -4,6 +4,16 @@ from scipy.interpolate import interp1d, Akima1DInterpolator
 import pandas as pd
 import numpy as np
 
+class DropColumnTransformer(BaseEstimator, TransformerMixin):
+
+    def __init__(self, columns_to_drop: list = []):
+        self.columns_to_drop = columns_to_drop
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        return X.drop(self.columns_to_drop, axis=1)
 
 class CharactersToNaNTransformer(BaseEstimator, TransformerMixin):
     def __init__(self, value):

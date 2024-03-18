@@ -4,7 +4,7 @@ import sys
 import pandas as pd
 import re
 import warnings
-from timeweaver.preprocessing import CharactersToNaNTransformer, ContinuityReindexTransformer, EdgeNaNFillerTransformer, ColumnInterpolateTransformer, PreProcessor
+from timeweaver.preprocessing import DropColumnTransformer, CharactersToNaNTransformer, ContinuityReindexTransformer, EdgeNaNFillerTransformer, ColumnInterpolateTransformer, PreProcessor
 from timeweaver.analysis import get_summary_characters, get_summary, get_rate_analysis
 from sklearn.pipeline import Pipeline
 
@@ -42,7 +42,7 @@ class TimeWeaver:
     .. note:: 
         This class is designed to work with pandas DataFrames and requires the pandas library.
     """
-    def __init__(self, df: pd.DataFrame, tracking_column: str, frequency: float = 1.0, logging: bool = False):
+    def __init__(self, df: pd.DataFrame, tracking_column: str, frequency: float = 1.0, columns_to_drop : list = [], logging: bool = False):
         """
         Initializes the TimeWeaver class with a DataFrame and a tracking column name.
 
@@ -72,6 +72,8 @@ class TimeWeaver:
         self.tracking_column = tracking_column
         # Frequency for Continuity Reindexing
         self.frequency = frequency
+        # Columns to drop
+        self.columns_to_drop = columns_to_drop
         # Reuslts of Method performance
         self.evaluation_dataframe = None
         # Method worked : True / False
@@ -114,6 +116,7 @@ class TimeWeaver:
                 warnings.filterwarnings("ignore", category=FutureWarning)
 
         pipeline = Pipeline([
+        ('drop_columns', DropColumnTransformer(columns_to_drop=self.columns_to_drop)),
         ('characters_to_nan', CharactersToNaNTransformer(value=np.nan)),
         ('edge_nan_filler', EdgeNaNFillerTransformer()),
         #('continuity_reindex', ContinuityReindexTransformer(time_column=self.tracking_column, frequency=self.frequency)),
@@ -137,6 +140,7 @@ class TimeWeaver:
             method_dict = self.get_best(optimized_selection=True)
 
             pipeline = Pipeline([
+            ('drop_columns', DropColumnTransformer(columns_to_drop=self.columns_to_drop)),   
             ('characters_to_nan', CharactersToNaNTransformer(value=np.nan)),
             ('edge_nan_filler', EdgeNaNFillerTransformer()),
             ('continuity_reindex', ContinuityReindexTransformer(tracking_column=self.tracking_column, frequency=self.frequency)),

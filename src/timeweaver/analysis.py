@@ -180,7 +180,7 @@ def get_rate_analysis(self, start_rate: float = 0.1, end_rate: float = 0.5, step
 
         for rate in missing_rates:
             rate = round(rate, 4)
-            self.log(f"Evaluating missing rate: {rate}", overwrite=False)
+            self.log(f"Evaluating missing rate: {rate}", overwrite=True)
             self.evaluate(missing_rate=rate, prints=prints)
             self.evaluation_dataframe['missing_rate'] = rate
             all_results.append(self.evaluation_dataframe.copy()) # Ensure to copy the dataframe
