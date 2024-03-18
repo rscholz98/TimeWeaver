@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: TimeWeaver
-Version: 0.1.7.26
+Version: 0.1.7.27
 Summary: Python Package for automated multivariate Time Series imputation
 Home-page: https://github.com/rscholz98/TimeWeaver
 Author: Richard Scholz

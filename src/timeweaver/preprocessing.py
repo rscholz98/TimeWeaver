@@ -28,7 +28,7 @@ class CharactersToNaNTransformer(BaseEstimator, TransformerMixin):
                 return val
             return self.value
         
-        X_transformed = X.applymap(to_numeric_or_nan)
+        X_transformed = X.map(to_numeric_or_nan)
         return X_transformed
     
 class EdgeNaNFillerTransformer(BaseEstimator, TransformerMixin):

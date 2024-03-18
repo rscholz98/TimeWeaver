@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='TimeWeaver',  # Package name
-    version='0.1.7.26',  # Package version
+    version='0.1.7.27',  # Package version
     author='Richard Scholz',  # Your name
     author_email='richardscholz1@gmx.de',  # Your email address
     description='Python Package for automated multivariate Time Series imputation',  # Short package description
