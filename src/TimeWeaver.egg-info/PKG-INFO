@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: TimeWeaver
-Version: 0.1.7.30
+Version: 0.1.7.31
 Summary: Python Package for automated multivariate Time Series imputation
 Home-page: https://github.com/rscholz98/TimeWeaver
 Author: Richard Scholz
@@ -78,3 +78,8 @@ PreProcessor.transform(dataframe)
 # Structure
 
 <img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/structure.png" alt="TimeWeaver Structure" width="100%" />
+
+# To Do List
+
+- [x] Implement the PreProcessor object as a return
+- [ ] If the initial design doesnt find a interpolation method it breaks

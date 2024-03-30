@@ -228,7 +228,7 @@ class TimeWeaver:
             ]
 
             if self.df_processed is None:
-                self.preprocess(prints=prints)
+                self.df_processed = self.preprocess(prints=prints)
 
             ### Initialize results dictionary with empty values for each method and column ###
             results = {}

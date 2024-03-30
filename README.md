@@ -54,4 +54,5 @@ PreProcessor.transform(dataframe)
 # To Do List
 
 - [x] Implement the PreProcessor object as a return
-- [ ] If the initial design doesnt find a interpolation method it breaks
+- [x] If the initial design doesnt find a interpolation method it breaks
+- [ ] Ensure that the artificial NaN´s dont fill edge values
