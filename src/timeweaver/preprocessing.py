@@ -40,17 +40,16 @@ class EdgeNaNFillerTransformer(BaseEstimator, TransformerMixin):
 
     def transform(self, X, y=None):
         X_transformed = X.copy()
+        
         for column_name in X_transformed.columns:
             first_valid = X_transformed[column_name].first_valid_index()
             last_valid = X_transformed[column_name].last_valid_index()
             
-            if first_valid is not None:
-                X_transformed.loc[:first_valid, column_name] = X_transformed.loc[:first_valid, column_name].ffill()
-            if last_valid is not None:
-                X_transformed.loc[last_valid:, column_name] = X_transformed.loc[last_valid:, column_name].bfill()
+            if first_valid is not None and last_valid is not None:
+                X_transformed.loc[:first_valid, column_name] = X_transformed.loc[first_valid, column_name]
+                X_transformed.loc[last_valid:, column_name] = X_transformed.loc[last_valid, column_name]
 
         return X_transformed
-
 
 class ContinuityReindexTransformer(BaseEstimator, TransformerMixin):
     def __init__(self, tracking_column: str, frequency: float):

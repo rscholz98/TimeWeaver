@@ -142,9 +142,9 @@ class TimeWeaver:
             pipeline = Pipeline([
             ('drop_columns', DropColumnTransformer(columns_to_drop=self.columns_to_drop)),   
             ('characters_to_nan', CharactersToNaNTransformer(value=np.nan)),
-            ('edge_nan_filler', EdgeNaNFillerTransformer()),
             ('continuity_reindex', ContinuityReindexTransformer(tracking_column=self.tracking_column, frequency=self.frequency)),
-            ('column_interpolate', ColumnInterpolateTransformer(interpolation_methods=method_dict))
+            ('edge_nan_filler', EdgeNaNFillerTransformer()),
+            ('column_interpolate', ColumnInterpolateTransformer(interpolation_methods=method_dict)),
             ])
 
             self.pipeline = pipeline
