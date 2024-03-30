@@ -247,13 +247,13 @@ class TimeWeaver:
             for method in methods:
                 if prints:
                     self.log(f"Evaluating method: {method['name']}", overwrite=True)
-                for column in self.df.columns:
+                for column in self.df_processed.columns:
 
                     if column == self.tracking_column:
                         continue
 
                     ########## Fill NaNs at the edges ##########
-                    temp_df = self.df.copy()
+                    temp_df = self.df_processed.copy()
                     ############################################
 
                     np.random.seed(0)

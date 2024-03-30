@@ -50,3 +50,8 @@ PreProcessor.transform(dataframe)
 # Structure
 
 <img src="https://raw.githubusercontent.com/rscholz98/TimeWeaver/main/assets/structure.png" alt="TimeWeaver Structure" width="100%" />
+
+# To Do List
+
+- [x] Implement the PreProcessor object as a return
+- [ ] If the initial design doesnt find a interpolation method it breaks
